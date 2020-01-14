@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes');
 
 const app = express();
 
@@ -9,9 +10,6 @@ mongoose.connect('mongodb+srv://omnistackuser:lbpAO2Zzb76csLM8@omnistack-erlon.m
 });
 
 app.use(express.json());
-
-app.post('/users', (req, res) =>{
-    return res.json({ message: 'hi'});
-})
+app.use(routes);
 
 app.listen(3333);
