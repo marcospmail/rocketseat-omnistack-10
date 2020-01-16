@@ -7,13 +7,13 @@ import Profile from './pages/Profile';
 
 const Routes = createAppContainer(
     createStackNavigator({
-        main: {
+        Main: {
             screen: Main,
             navigationOptions: {
-                title: 'Main'
+                title: 'DevRadar'
             }
         },
-        profile: {
+        Profile: {
             screen: Profile,
             navigationOptions: {
                 title: 'Profile'
@@ -23,6 +23,7 @@ const Routes = createAppContainer(
     {
         defaultNavigationOptions: {
             headerTintColor: '#FFF',
+            headerBackTitleVisible: false,
             headerStyle: {
                 backgroundColor: '#7D40EF'
             }
