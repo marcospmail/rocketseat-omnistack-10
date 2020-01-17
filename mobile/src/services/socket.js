@@ -2,10 +2,14 @@ import socketio from 'socket.io-client';
 
 const socket = socketio('http://localhost:3333', {
     autoConnect: false
-})
+});
+
+function subscribeToNewDevs(subscribeFunction) {
+    socket.on('new-dev', subscribeFunction );
+}
 
 function connect(latitude, longitude, techs) {
-    socket.io.opts.query = { 
+    socket.io.opts.query = {
         latitude,
         longitude,
         techs
@@ -22,5 +26,6 @@ function disconnect() {
 
 export {
     connect,
-    disconnect
+    disconnect,
+    subscribeToNewDevs
 }
