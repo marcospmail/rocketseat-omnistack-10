@@ -3,8 +3,6 @@ const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
   async index(request, response) {
-    console.log('eiii');
-
     const { latitude, longitude, techs } = request.query;
 
     const techsArray = parseStringAsArray(techs);
